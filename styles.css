@@ -38,9 +38,9 @@ nav {
 
 .logo {
     font-family: "Apple Chancery", "Brush Script MT", "Comic Sans MS", cursive;
-    font-size: 3rem;        /* Prominent but not overwhelming */
+    font-size: 4rem;        /* Prominent but not overwhelming */
     font-weight: 400;         /* Apple Chancery is inherently stylish; no bold needed */
-    letter-spacing: -20px;      /* Slight spacing for improved readability */
+    letter-spacing: -25px;      /* Slight spacing for improved readability */
     color: #333;              /* Dark grey for a refined, non-harsh look */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);  /* Soft shadow for depth */
 }
