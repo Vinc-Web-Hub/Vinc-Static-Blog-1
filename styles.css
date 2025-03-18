@@ -37,6 +37,7 @@ nav {
 }
 
 .logo {
+    font-family: "Apple Chancery", "Brush Script MT", "Comic Sans MS", cursive;
     font-size: 24px;
     font-weight: 700;
     letter-spacing: -1px;
