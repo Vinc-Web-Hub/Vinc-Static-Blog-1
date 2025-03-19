@@ -1,77 +1,29 @@
-// Blog data for each category
-const blogData = {
-    main: [
-        {
-            number: "001",
-            title: "Getting Started with Minimalist Design",
-            date: "March 14, 2025",
-            link: "blog.html#post-001"
-        },
-        {
-            number: "002",
-            title: "The Impact of Responsive Design on User Engagement",
-            date: "March 7, 2025",
-            link: "blog.html#post-002"
-        },
-        {
-            number: "003",
-            title: "Designing for Accessibility: Beyond the Basics",
-            date: "February 28, 2025",
-            link: "blog.html#post-003"
-        },
-        {
-            number: "004",
-            title: "Et plus si affinité: et Hop !",
-            date: "March 13, 2025",
-            link: "blog.html#post-004"
-        }
-    ],
-    music: [
-        {
-            number: "001",
-            title: "The Evolution of Digital Music Production",
-            date: "March 15, 2025",
-            link: "blog-music.html#post-001"
-        },
-        {
-            number: "002",
-            title: "Vinyl's Unexpected Resurgence in the Digital Age",
-            date: "March 8, 2025",
-            link: "blog-music.html#post-002"
-        },
-        {
-            number: "003",
-            title: "How AI is Transforming Music Composition",
-            date: "March 1, 2025",
-            link: "blog-music.html#post-003"
-        }
-    ],
-    science: [
-        {
-            number: "001",
-            title: "Breakthroughs in Quantum Computing",
-            date: "March 16, 2025",
-            link: "blog-science.html#post-001"
-        },
-        {
-            number: "002",
-            title: "The Future of Sustainable Energy",
-            date: "March 9, 2025",
-            link: "blog-science.html#post-002"
-        },
-        {
-            number: "003",
-            title: "Advances in CRISPR Gene Editing Technology",
-            date: "March 2, 2025",
-            link: "blog-science.html#post-003"
-        }
-    ]
+const blogFiles = {
+    main: 'blog.html',
+    music: 'blog-music.html',
+    science: 'blog-science.html'
 };
 
+// Function to fetch and parse blog data from HTML files
+async function fetchBlogData(category, file) {
+    const response = await fetch(file);
+    const text = await response.text();
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(text, 'text/html');
+    const posts = doc.querySelectorAll('.blog-post');
+    const blogs = Array.from(posts).map(post => ({
+        number: post.dataset.number,
+        title: post.dataset.title,
+        date: post.dataset.date,
+        link: `${file}#${post.id}`
+    }));
+    return blogs;
+}
+
 // Function to generate blog list items
-function generateBlogList(category, containerId) {
+async function generateBlogList(category, containerId) {
     const container = document.getElementById(containerId);
-    const blogs = blogData[category];
+    const blogs = await fetchBlogData(category, blogFiles[category]);
     
     // Clear existing content
     container.innerHTML = '';

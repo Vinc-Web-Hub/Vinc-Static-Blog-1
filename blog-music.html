@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Music</title>
+    <title>Music Blog</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="blog-styles.css">
 </head>
@@ -18,22 +18,20 @@
         </script>
 
         <div class="blog-container">
-            <h1 class="blog-title">Blog Music</h1>
+            <h1 class="blog-title">Music Blog</h1>
             
             <!-- Blog Post 1 -->
             <div class="blog-post" id="post-001">
                 <div class="post-header">
                     <div class="post-header-left">
                         <span class="post-number">#001</span>
-                        <h2 class="post-title">The Evolution of Digital Music Production</h2>
+                        <h2 class="post-title">The Evolution of Jazz</h2>
                     </div>
-                    <span class="post-date">March 14, 2025</span>
+                    <span class="post-date">March 10, 2025</span>
                 </div>
                 <div class="post-content">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-                    <p>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo.</p>
+                    <p>Jazz music has undergone significant transformations since its inception in the early 20th century. From the lively rhythms of New Orleans to the sophisticated sounds of modern jazz, this genre continues to evolve and inspire.</p>
+                    <p>In this post, we explore the key milestones in the evolution of jazz and highlight some of the most influential artists who have shaped its history.</p>
                 </div>
             </div>
             
@@ -42,40 +40,34 @@
                 <div class="post-header">
                     <div class="post-header-left">
                         <span class="post-number">#002</span>
-                        <h2 class="post-title">Vinyl's Unexpected Resurgence in the Digital Age</h2>
+                        <h2 class="post-title">The Rise of Electronic Dance Music</h2>
                     </div>
-                    <span class="post-date">March 7, 2025</span>
+                    <span class="post-date">March 5, 2025</span>
                 </div>
                 <div class="post-content">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-                    <p>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo.</p>   
+                    <p>Electronic Dance Music (EDM) has taken the world by storm, becoming one of the most popular genres in recent years. With its infectious beats and high-energy performances, EDM has captivated audiences worldwide.</p>
+                    <p>In this post, we delve into the origins of EDM, its rapid rise to fame, and the key figures who have propelled it to the forefront of the music industry.</p>
                 </div>
             </div>
-            
-            <!-- Blog Post 3 -->
-            <div class="blog-post" id="post-003">
-                <div class="post-header">
-                    <div class="post-header-left">
-                        <span class="post-number">#003</span>
-                        <h2 class="post-title">How AI is Transforming Music Composition</h2>
-                    </div>
-                    <span class="post-date">February 28, 2025</span>
-                </div>
-                <div class="post-content">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-                    <p>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo.</p>        
-                </div>
-            </div>
-            
+
             <!-- Add new blog posts here by copying the blog-post div structure -->
             
         </div>
     </div>
 
     <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const posts = document.querySelectorAll('.blog-post');
+            posts.forEach(post => {
+                const number = post.querySelector('.post-number').textContent.replace('#', '');
+                const title = post.querySelector('.post-title').textContent;
+                const date = post.querySelector('.post-date').textContent;
+                post.dataset.number = number;
+                post.dataset.title = title;
+                post.dataset.date = date;
+            });
+        });
+    </script>
 </body>
 </html>

@@ -38,7 +38,7 @@
             </div>
             
             <!-- Blog Post 2 -->
-            <div class="blog-post"id="post-002">
+            <div class="blog-post" id="post-002">
                 <div class="post-header">
                     <div class="post-header-left">
                         <span class="post-number">#002</span>
@@ -54,7 +54,7 @@
             </div>
             
             <!-- Blog Post 3 -->
-            <div class="blog-post"id="post-003">
+            <div class="blog-post" id="post-003">
                 <div class="post-header">
                     <div class="post-header-left">
                         <span class="post-number">#003</span>
@@ -71,7 +71,7 @@
             </div>
             
             <!-- Blog Post 4 -->
-            <div class="blog-post"id="post-004">
+            <div class="blog-post" id="post-004">
                 <div class="post-header">
                     <div class="post-header-left">
                         <span class="post-number">#004</span>
@@ -93,5 +93,18 @@
     </div>
 
     <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const posts = document.querySelectorAll('.blog-post');
+            posts.forEach(post => {
+                const number = post.querySelector('.post-number').textContent.replace('#', '');
+                const title = post.querySelector('.post-title').textContent;
+                const date = post.querySelector('.post-date').textContent;
+                post.dataset.number = number;
+                post.dataset.title = title;
+                post.dataset.date = date;
+            });
+        });
+    </script>
 </body>
 </html>
