@@ -17,6 +17,7 @@ async function fetchBlogData(category, file) {
         date: post.dataset.date,
         link: `${file}#${post.id}`
     }));
+    alert(`Fetched ${blogs.length} blogs for category: ${category}`); // Alert to check the fetched data
     return blogs;
 }
 
@@ -24,6 +25,7 @@ async function fetchBlogData(category, file) {
 async function generateBlogList(category, containerId) {
     const container = document.getElementById(containerId);
     const blogs = await fetchBlogData(category, blogFiles[category]);
+    alert(`Generating blog list for category: ${category}`); // Alert to check if the await line succeeds
     
     // Clear existing content
     container.innerHTML = '';
