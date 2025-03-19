@@ -49,7 +49,8 @@ async function generateBlogList(category, containerId) {
 }
 
 // Generate all blog lists when the page loads
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', async function() {
+    await setBlogDataAttributes();
     generateBlogList('main', 'main-blog-list');
     generateBlogList('music', 'music-blog-list');
     generateBlogList('science', 'science-blog-list');
