@@ -12,4 +12,5 @@ function setBlogDataAttributes() {
         });
         resolve();
     });
+    alert('exiting setBlogDataAttributes');
 }
