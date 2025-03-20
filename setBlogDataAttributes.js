@@ -9,6 +9,7 @@ function setBlogDataAttributes() {
             post.dataset.number = number;
             post.dataset.title = title;
             post.dataset.date = date;
+            alert(number, ' ', title, ' ', date)
         });
         resolve();
     });
