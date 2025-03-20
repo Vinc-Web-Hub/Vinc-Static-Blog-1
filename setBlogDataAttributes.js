@@ -2,6 +2,7 @@ function setBlogDataAttributes() {
     alert('entering setBlogDataAttributes');
     return new Promise((resolve) => {
         const posts = document.querySelectorAll('.blog-post');
+        alert(`Found ${posts.length} blog posts`);
         posts.forEach(post => {
             const number = post.querySelector('.post-number').textContent.replace('#', '');
             const title = post.querySelector('.post-title').textContent;
@@ -9,9 +10,9 @@ function setBlogDataAttributes() {
             post.dataset.number = number;
             post.dataset.title = title;
             post.dataset.date = date;
-            alert(number, ' ', title, ' ', date);
+            alert(`Post data: ${number}, ${title}, ${date}`);
         });
         resolve();
+        alert('exiting setBlogDataAttributes');
     });
-    alert('exiting setBlogDataAttributes');
 }
