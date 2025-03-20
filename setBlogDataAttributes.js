@@ -12,7 +12,7 @@ function setBlogDataAttributes() {
             post.dataset.date = date;
             alert(`Post data: ${number}, ${title}, ${date}`);
         });
-        resolve();
         alert('exiting setBlogDataAttributes');
+        resolve();
     });
 }
