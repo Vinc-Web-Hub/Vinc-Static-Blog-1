@@ -16,3 +16,9 @@ function setBlogDataAttributes() {
         resolve();
     });
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    setBlogDataAttributes().then(() => {
+        alert('setBlogDataAttributes resolved');
+    });
+});
